@@ -33,87 +33,100 @@ namespace Calculator
         {
             string name = ((Button)sender).Name;
 
-            switch (name)
+            if (output.Length < 16)
             {
-                case "OneBtn":
-                    output += "1";
-                    OutputTextBlock.Text = output;
-                    break;
-                case "TwoBtn":
-                    output += "2";
-                    OutputTextBlock.Text = output;
-                    break;
-                case "ThreeBtn":
-                    output += "3";
-                    OutputTextBlock.Text = output;
-                    break;
-                case "FourBtn":
-                    output += "4";
-                    OutputTextBlock.Text = output;
-                    break;
-                case "FiveBtn":
-                    output += "5";
-                    OutputTextBlock.Text = output;
-                    break;
-                case "SixBtn":
-                    output += "6";
-                    OutputTextBlock.Text = output;
-                    break;
-                case "SevenBtn":
-                    output += "7";
-                    OutputTextBlock.Text = output;
-                    break;
-                case "EightBtn":
-                    output += "8";
-                    OutputTextBlock.Text = output;
-                    break;
-                case "NineBtn":
-                    output += "9";
-                    OutputTextBlock.Text = output;
-                    break;
-                case "ZeroBtn":
-                    output += "0";
-                    OutputTextBlock.Text = output;
-                    break;
-                case "dotBtn":
-                    output += ",";
-                    OutputTextBlock.Text = output;
-                    break;
-                case "ClearBtn":
-                    if (output.Length > 0)
-                    {
-                        output = output.Substring(0, output.Length - 1);
+
+                switch (name)
+                {
+                    case "OneBtn":
+                        output += "1";
                         OutputTextBlock.Text = output;
-                    }
-                    break;
+                        break;
+                    case "TwoBtn":
+                        output += "2";
+                        OutputTextBlock.Text = output;
+                        break;
+                    case "ThreeBtn":
+                        output += "3";
+                        OutputTextBlock.Text = output;
+                        break;
+                    case "FourBtn":
+                        output += "4";
+                        OutputTextBlock.Text = output;
+                        break;
+                    case "FiveBtn":
+                        output += "5";
+                        OutputTextBlock.Text = output;
+                        break;
+                    case "SixBtn":
+                        output += "6";
+                        OutputTextBlock.Text = output;
+                        break;
+                    case "SevenBtn":
+                        output += "7";
+                        OutputTextBlock.Text = output;
+                        break;
+                    case "EightBtn":
+                        output += "8";
+                        OutputTextBlock.Text = output;
+                        break;
+                    case "NineBtn":
+                        output += "9";
+                        OutputTextBlock.Text = output;
+                        break;
+                    case "ZeroBtn":
+                        output += "0";
+                        OutputTextBlock.Text = output;
+                        break;
+                    case "dotBtn":
+                        if (output.Contains(","))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            output += ",";
+                            OutputTextBlock.Text = output;
+                            break;
+                        }
+                    case "ClearBtn":
+                        if (output.Length > 0)
+                        {
+                            output = output.Substring(0, output.Length - 1);
+                            OutputTextBlock.Text = output;
+                        }
+                        break;
+                }
             }
         }
 
         private void OperationBtn_Click(object sender, RoutedEventArgs e)
         {
-            numOne = Double.Parse(output);
-            output = "";
-            string name = ((Button)sender).Name;
 
-            switch (name)
-            {
-                case "DivideBtn":
-                    operators = "divide";
-                    OutputTextBlock.Text = "/";
-                    break;
-                case "MultiplyBtn":
-                    operators = "multiply";
-                    OutputTextBlock.Text = "*";
-                    break;
-                case "SubtractBtn":
-                    operators = "subtract";
-                    OutputTextBlock.Text = "-";
-                    break;
-                case "AddBtn":
-                    operators = "add";
-                    OutputTextBlock.Text = "+";
-                    break;
-            }
+                numOne = Double.Parse(output);
+                output = "";
+                string name = ((Button)sender).Name;
+                
+
+                switch (name)
+                {
+                    case "DivideBtn":
+                        operators = "divide";
+                        OutputTextBlock.Text = "/";
+                        break;
+                    case "MultiplyBtn":
+                        operators = "multiply";
+                        OutputTextBlock.Text = "*";
+                        break;
+                    case "SubtractBtn":
+                        operators = "subtract";
+                        OutputTextBlock.Text = "-";
+                        break;
+                    case "AddBtn":
+                        operators = "add";
+                        OutputTextBlock.Text = "+";
+                        break;
+                }
         }
 
         private void SolutionBtn_Click(object sender, RoutedEventArgs e)
@@ -150,7 +163,7 @@ namespace Calculator
             NumTwo = 0;
             output = "";
             operators = "";
-            OutputTextBlock.Text = "";
+            OutputTextBlock.Text = "0";
         }
     }
 }
