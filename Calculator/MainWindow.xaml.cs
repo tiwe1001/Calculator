@@ -27,6 +27,8 @@ namespace Calculator
         public MainWindow()
         {
             InitializeComponent();
+
+            DivideBtn.Content = "\u00F7";
         }
 
         private void NumbBtn_Click(object sender, RoutedEventArgs e)

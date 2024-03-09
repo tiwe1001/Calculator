@@ -137,7 +137,7 @@
         <!-- logical operators-->
         <Button
             x:Name="DivideBtn"
-            Content="/"
+            Content=""
             Grid.Row="1"
             Grid.Column="3"
             FontSize="30"
@@ -180,12 +180,11 @@
 
         <Button
             x:Name="ClearBtn"
-            Content="C"
             Grid.Row="4"
-            Grid.Column="0"
-            FontSize="30"
-            FontWeight="Bold" Click="NumbBtn_Click"/>
-        
+            Grid.Column="0" Click="NumbBtn_Click">
+            <Image Source="/Image/deleteButtonImage.png" Width="50" Height="50"/>
+        </Button>
+
         <Button
             x:Name="ClearAllBtn"
             Content="Delete"
