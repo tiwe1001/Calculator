@@ -75,6 +75,17 @@ namespace Calculator
                     output += "0";
                     OutputTextBlock.Text = output;
                     break;
+                case "dotBtn":
+                    output += ",";
+                    OutputTextBlock.Text = output;
+                    break;
+                case "ClearBtn":
+                    if (output.Length > 0)
+                    {
+                        output = output.Substring(0, output.Length - 1);
+                        OutputTextBlock.Text = output;
+                    }
+                    break;
             }
         }
 
@@ -133,7 +144,7 @@ namespace Calculator
             OutputTextBlock.Text = output;
         }
 
-        private void ClearBtn_Click(object sender, RoutedEventArgs e)
+        private void ClearAllBtn_Click(object sender, RoutedEventArgs e)
         {
             numOne = 0;
             NumTwo = 0;

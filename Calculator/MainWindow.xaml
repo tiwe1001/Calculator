@@ -11,7 +11,7 @@
             <!-- for output -->
             <RowDefinition Height="100"/>
             <!-- for the numbers -->
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -125,6 +125,15 @@
             FontSize="30"
             FontWeight="Bold" Click="NumbBtn_Click"/>
 
+        <Button
+            x:Name="dotBtn"
+            Content=","
+            Grid.Row="4"
+            Grid.Column="2"
+            FontSize="30"
+            FontWeight="Bold" Click="NumbBtn_Click"
+            />
+
         <!-- logical operators-->
         <Button
             x:Name="DivideBtn"
@@ -158,29 +167,32 @@
             FontSize="30"
             FontWeight="Bold" Click="OperationBtn_Click"/>
 
-        <Button
-            x:Name="dotBtn"
-            Content=","
-            Grid.Row="4"
-            Grid.Column="2"
-            FontSize="30"
-            FontWeight="Bold"
-            />
-
+        
+        <!-- function buttons -->
         <Button
             x:Name="EqualBtn"
             Content="="
             Grid.Row="5"
-            Grid.Column="3"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
             FontSize="30"
             FontWeight="Bold" Click="SolutionBtn_Click"/>
 
         <Button
             x:Name="ClearBtn"
             Content="C"
-            Grid.Row="5"
+            Grid.Row="4"
             Grid.Column="0"
             FontSize="30"
-            FontWeight="Bold" Click="ClearBtn_Click"/>
+            FontWeight="Bold" Click="NumbBtn_Click"/>
+        
+        <Button
+            x:Name="ClearAllBtn"
+            Content="Delete"
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            FontSize="30"
+            FontWeight="Bold" Click="ClearAllBtn_Click"/>
     </Grid>
 </Window>
