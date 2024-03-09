@@ -5,25 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="350">
+        Title="MainWindow" Height="450" Width="340">
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <!-- for output -->
             <RowDefinition Height="100"/>
             <!-- for the numbers -->
             <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="82.5"/>
-            <ColumnDefinition Width="82.5"/>
-            <ColumnDefinition Width="82.5"/>
-            <ColumnDefinition Width="82.5"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <!-- output field -->
+        <TextBlock x:Name="OutputTextBlock"
+                   Margin="15"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   Text=""
+                   FontSize="50"
+                   TextAlignment="Right"
+                   VerticalAlignment="Center"/>
+
+        <!-- numbers -->
         <Button
             x:Name="SevenBtn"
             Content="7"
@@ -103,5 +115,46 @@
             Grid.Column="1"
             FontSize="30"
             FontWeight="Bold" Click="NumbBtn_Click"/>
+
+        <!-- logical operators-->
+        <Button
+            x:Name="DivideBtn"
+            Content="/"
+            Grid.Row="1"
+            Grid.Column="3"
+            FontSize="30"
+            FontWeight="Bold" Click="OperationBtn_Click"/>
+
+        <Button
+            x:Name="MultiplyBtn"
+            Content="*"
+            Grid.Row="2"
+            Grid.Column="3"
+            FontSize="30"
+            FontWeight="Bold" Click="OperationBtn_Click"/>
+
+        <Button
+            x:Name="SubtractBtn"
+            Content="-"
+            Grid.Row="3"
+            Grid.Column="3"
+            FontSize="30"
+            FontWeight="Bold" Click="OperationBtn_Click"/>
+
+        <Button
+            x:Name="AddBtn"
+            Content="+"
+            Grid.Row="4"
+            Grid.Column="3"
+            FontSize="30"
+            FontWeight="Bold" Click="OperationBtn_Click"/>
+
+        <Button
+            x:Name="EqualBtn"
+            Content="="
+            Grid.Row="5"
+            Grid.Column="3"
+            FontSize="30"
+            FontWeight="Bold" Click="SolutionBtn_Click"/>
     </Grid>
 </Window>
