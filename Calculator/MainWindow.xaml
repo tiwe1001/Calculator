@@ -25,16 +25,25 @@
         </Grid.ColumnDefinitions>
 
         <!-- output field -->
-        <TextBlock x:Name="OutputTextBlock"
-                   Margin="15"
-                   Grid.Row="0"
-                   Grid.Column="0"
-                   Grid.ColumnSpan="4"
-                   Text=""
-                   FontSize="50"
-                   TextAlignment="Right"
-                   VerticalAlignment="Center"/>
-
+        <Border BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="1"
+                Margin="15"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="4">
+            
+            <TextBlock x:Name="OutputTextBlock"
+                       Margin="0"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="4"
+                       Text=""
+                       FontSize="50"
+                       TextAlignment="Right"
+                       VerticalAlignment="Center"/>
+        </Border>
+    
         <!-- numbers -->
         <Button
             x:Name="SevenBtn"
@@ -150,11 +159,28 @@
             FontWeight="Bold" Click="OperationBtn_Click"/>
 
         <Button
+            x:Name="dotBtn"
+            Content=","
+            Grid.Row="4"
+            Grid.Column="2"
+            FontSize="30"
+            FontWeight="Bold"
+            />
+
+        <Button
             x:Name="EqualBtn"
             Content="="
             Grid.Row="5"
             Grid.Column="3"
             FontSize="30"
             FontWeight="Bold" Click="SolutionBtn_Click"/>
+
+        <Button
+            x:Name="ClearBtn"
+            Content="C"
+            Grid.Row="5"
+            Grid.Column="0"
+            FontSize="30"
+            FontWeight="Bold" Click="ClearBtn_Click"/>
     </Grid>
 </Window>

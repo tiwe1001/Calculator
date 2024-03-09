@@ -22,7 +22,7 @@ namespace Calculator
     {
         string output = "";
         string operators = "";
-        double numOne, NumTwo, solution;
+        double numOne, NumTwo;
 
         public MainWindow()
         {
@@ -111,23 +111,35 @@ namespace Calculator
 
             if (operators == "divide")
             {
-                solution = numOne / NumTwo;
+                numOne = numOne / NumTwo;
+                output = numOne.ToString();
             }
             else if (operators == "multiply")
             {
-                solution = numOne * NumTwo;
+                numOne = numOne * NumTwo;
+                output = numOne.ToString();
             }
             else if (operators == "subtract")
             {
-                solution = numOne - NumTwo;
+                numOne = numOne - NumTwo;
+                output = numOne.ToString();
             }
             else if (operators == "add")
             {
-                solution = numOne + NumTwo;
+                numOne = numOne + NumTwo;
+                output = numOne.ToString();
             }
 
-            string finish = solution.ToString();
-            OutputTextBlock.Text = finish;
+            OutputTextBlock.Text = output;
+        }
+
+        private void ClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            numOne = 0;
+            NumTwo = 0;
+            output = "";
+            operators = "";
+            OutputTextBlock.Text = "";
         }
     }
 }
